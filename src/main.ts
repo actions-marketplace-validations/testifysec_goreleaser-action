@@ -56,6 +56,8 @@ async function run(): Promise<void> {
       }
     }
 
+    core.info(`Running GoReleaser ${inputs.version} with Witness args ${inputs.args}${snapshot}`);
+
     await exec.exec(`witness ${bin} ${inputs.args}${snapshot}`, undefined, {
       env: Object.assign({}, process.env, {
         GORELEASER_CURRENT_TAG: process.env.GORELEASER_CURRENT_TAG || tag || ''
