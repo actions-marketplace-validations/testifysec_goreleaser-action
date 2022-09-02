@@ -56,7 +56,7 @@ async function run(): Promise<void> {
       }
     }
 
-    await exec.exec(`${bin} ${inputs.args}${snapshot}`, undefined, {
+    await exec.exec(`witness ${bin} ${inputs.args}${snapshot}`, undefined, {
       env: Object.assign({}, process.env, {
         GORELEASER_CURRENT_TAG: process.env.GORELEASER_CURRENT_TAG || tag || ''
       }) as {
